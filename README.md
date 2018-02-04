@@ -35,7 +35,8 @@ Add todo list section
 
 ===
 
-Change css lib?
+Exe - Win, Mac
+css lib? Lose Bootstrap and jQuery
 EF DB
 Cue/Play?
 templator
