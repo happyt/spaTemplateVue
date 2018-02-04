@@ -32,3 +32,11 @@ Will then have debug option Net + Browser
 Add todo list section
 
 
+===
+
+Change css lib?
+EF DB
+Cue/Play?
+templator
+
+
