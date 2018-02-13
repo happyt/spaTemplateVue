@@ -32,11 +32,18 @@ Will then have debug option Net + Browser
 
 Add todo list section
 
+dotnet run
+
+===
+
+Rearrange/rename to make more logical
+
+Add extra election section
 
 ===
 
 Exe - Win, Mac
-css lib? Lose Bootstrap and jQuery
+css lib? Lose Bootstrap and jQuery  -> Bulma??
 EF DB
 Cue/Play?
 templator

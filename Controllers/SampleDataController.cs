@@ -47,8 +47,8 @@ namespace vue_core_okta.Controllers
     public class TodoController : Controller
     {
         private static ConcurrentBag<Todo> todos = new ConcurrentBag<Todo> {
-        new Todo { Id = Guid.NewGuid(), Description = "Learn Vue" }
-    };
+            new Todo { Id = Guid.NewGuid(), Description = "Learn Vue" }
+        };
 
         [HttpGet()]
         public IEnumerable<Todo> GetTodos()
@@ -74,11 +74,11 @@ namespace vue_core_okta.Controllers
             todo.Done = true;
             return StatusCode(204);
         }
-    }
-    public class Todo
-    {
-        public Guid Id { get; set; }
-        public string Description { get; set; }
-        public bool Done { get; set; }
+        public class Todo
+        {
+            public Guid Id { get; set; }
+            public string Description { get; set; }
+            public bool Done { get; set; }
+        }
     }
 }
