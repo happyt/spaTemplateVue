@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace vue_core_okta.Controllers
 {
     [Route("api/[controller]")]
-    public class SampleDataController : Controller
+    public class ApiDataController : Controller
     {
         private static string[] Summaries = new[]
         {
