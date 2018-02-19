@@ -31,14 +31,19 @@ Will then have debug option Net + Browser
 ===
 
 Add todo list section
+cf http://www.dotnetcurry.com/aspnet/1383/modern-web-dev-aspnet-core-webpack-vuejs
 
 dotnet run
 
 ===
 
 Rearrange/rename to make more logical
+Rename to ApiDataController etc
+F5 to re-run the server side
 
-Add extra election section
+===
+
+Add extra Google sheets section
 
 ===
 
