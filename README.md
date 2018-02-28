@@ -38,10 +38,13 @@ dotnet run
 ===
 
 Rearrange/rename to make more logical
-Rename to ApiDataController etc
+Rename to ApiDataController etc - why not WeatherController ??
 F5 to re-run the server side
 
 ===
+et up debugging using these instructions,
+C# plugin and Chrome debugger plugin
+http://www.dotnetcurry.com/aspnet/1373/debugging-aspnet-core-using-visual-studio-code
 
 Add extra Google sheets section
 

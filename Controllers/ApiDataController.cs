@@ -4,7 +4,7 @@ using System.Collections.Concurrent;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-
+ 
 namespace vue_core_okta.Controllers
 {
     [Route("api/[controller]")]
@@ -75,6 +75,45 @@ namespace vue_core_okta.Controllers
             return StatusCode(204);
         }
         public class Todo
+        {
+            public Guid Id { get; set; }
+            public string Description { get; set; }
+            public bool Done { get; set; }
+        }
+    }
+
+    [Route("api/[controller]")]
+    public class SheetController : Controller
+    {
+        private static ConcurrentBag<Sheet> todos2 = new ConcurrentBag<Sheet> {
+            new Sheet { Id = Guid.NewGuid(), Description = "Extra Item" }
+        };
+
+        [HttpGet()]
+        public IEnumerable<Sheet> GetSheets()
+        {
+            return todos2.Where(t => !t.Done);
+        }
+
+        [HttpPost()]
+        public Sheet AddSheet([FromBody]Sheet todo)
+        {
+            todo.Id = Guid.NewGuid();
+            todo.Done = false;
+            todos2.Add(todo);
+            return todo;
+        }
+
+        [HttpDelete("{id}")]
+        public ActionResult CompleteSheet(Guid id)
+        {
+            var todo = todos2.SingleOrDefault(t => t.Id == id);
+            if (todo == null) return NotFound();
+
+            todo.Done = true;
+            return StatusCode(204);
+        }
+        public class Sheet
         {
             public Guid Id { get; set; }
             public string Description { get; set; }
