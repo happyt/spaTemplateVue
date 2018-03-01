@@ -1,10 +1,12 @@
 <template>
     <div>
         <h1>Current weather</h1>
-        <h2 >
+        <h3 >
             {{wItem.city}} - {{wItem.summary}} , {{wItem.temp}} 
-        </h2>
-
+        </h3>
+        <button v-on:click="updateCount()" class="btn btn-primary">
+            Next
+        </button>
     </div>
 </template>
 <script src="./weather.ts"></script>
