@@ -9,8 +9,8 @@ interface TodoItem {
  
 @Component
 export default class TodoComponent extends Vue {
-    todos: TodoItem[];
-    newItemDescription: string;
+    todos: TodoItem[] = [];
+    newItemDescription: string = "";
  
     data() {
         return {
