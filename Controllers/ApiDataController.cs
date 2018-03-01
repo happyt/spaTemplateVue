@@ -10,7 +10,7 @@ using Newtonsoft.Json;
 namespace vue_core_okta.Controllers
 {
   [Route("api/[controller]")]
-  public class ApiDataController : Controller
+  public class ForecastController : Controller
   {
     private static string[] Summaries = new[]
     {
@@ -87,9 +87,16 @@ namespace vue_core_okta.Controllers
   [Route("api/[controller]")]
   public class WeatherController : Controller
   {
+    private static string[] cities = { "Sydney", "Melbourne" };
+
+    [HttpGet()]
+    public IEnumerable<string> Weather()        // name doesn't matter
+    {
+      return cities;
+    }
 
     [HttpGet("{city}")]
-    public async Task<IActionResult> City(string city)
+    public async Task<IActionResult> Weather(string city)
     {
       using (var client = new HttpClient())
       {
@@ -100,7 +107,7 @@ namespace vue_core_okta.Controllers
           response.EnsureSuccessStatusCode();
 
           var stringResult = await response.Content.ReadAsStringAsync();
-          Console.WriteLine(stringResult);
+       //   Console.WriteLine(stringResult);
           var rawWeather = JsonConvert.DeserializeObject<OpenWeatherResponse>(stringResult);
           return Ok(new
           {
