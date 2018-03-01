@@ -19,8 +19,8 @@ export default class WeatherComponent extends Vue {
         };
     }
     mounted() {
-        console.log("mounted...", this.count)
-        console.log("value before...", this.cities.length, this.count)
+        // console.log("mounted...", this.count)
+        // console.log("value before...", this.cities.length, this.count)
         this.getData()
     }
     getData() {
@@ -30,23 +30,11 @@ export default class WeatherComponent extends Vue {
                 this.wItem = data;
             });
  //       this.count = (this.count >= this.cities.length - 1) ? 0 : this.count+1
-        console.log("values after...", this.cities.length, this.count)
+ //       console.log("values after...", this.cities.length, this.count)
         
     }
     updateCount() {
         this.count = (this.count >= this.cities.length - 1) ? 0 : this.count+1
         this.getData()
-    }
-    beforeCreate() {
-        console.log("beforeCreate...")
-    }    
-    created() {
-        console.log("created...")
-    }
-    beforeUpdate() {
-        console.log("beforeUpdate...")
-    }    
-    updated() {
-        console.log("updated...")
     }
 }

@@ -13,7 +13,7 @@ export default class FetchDataComponent extends Vue {
     forecasts: WeatherForecast[] = [];
 
     mounted() {
-        fetch('api/Forecast/WeatherForecasts')
+        fetch('api/forecast/weatherforecasts')
             .then(response => response.json() as Promise<WeatherForecast[]>)
             .then(data => {
                 this.forecasts = data;

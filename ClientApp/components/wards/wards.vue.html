@@ -1,0 +1,14 @@
+<template>
+  <div>
+      <h1>Election wards</h1>
+      <h3 >
+          <li v-for="item in wards">
+              {{item.id}} , {{item.name}}
+          </li>
+      </h3>
+      <button v-on:click="update()" class="btn btn-primary">
+          Updated
+      </button>
+  </div>
+</template>
+<script src="./wards.ts"></script>
